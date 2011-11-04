@@ -1,3 +1,9 @@
+# revision 15878
+# category Package
+# catalog-ctan /macros/plain/contrib/misc/placeins.tex
+# catalog-date 2009-11-10 09:15:37 +0100
+# catalog-license pd
+# catalog-version 2.0
 Name:		texlive-placeins-plain
 Version:	2.0
 Release:	1
@@ -39,6 +45,7 @@ insertions.).
 #-----------------------------------------------------------------------
 %files
 %{_texmfdistdir}/tex/plain/placeins-plain/placeins.tex
+%doc %{_tlpkgobjdir}/*.tlpobj
 
 #-----------------------------------------------------------------------
 %prep
@@ -49,3 +56,5 @@ insertions.).
 %install
 mkdir -p %{buildroot}%{_texmfdistdir}
 cp -fpar tex %{buildroot}%{_texmfdistdir}
+mkdir -p %{buildroot}%{_tlpkgobjdir}
+cp -fpa tlpkg/tlpobj/*.tlpobj %{buildroot}%{_tlpkgobjdir}
