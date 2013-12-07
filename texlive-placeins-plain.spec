@@ -6,7 +6,7 @@
 # catalog-version 2.0
 Name:		texlive-placeins-plain
 Version:	2.0
-Release:	5
+Release:	6
 Summary:	Insertions that keep their place
 Group:		Publishing
 URL:		http://www.ctan.org/tex-archive/macros/plain/contrib/misc/placeins.tex
