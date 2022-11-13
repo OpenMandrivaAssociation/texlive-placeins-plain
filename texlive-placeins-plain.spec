@@ -1,17 +1,11 @@
-# revision 15878
-# category Package
-# catalog-ctan /macros/plain/contrib/misc/placeins.tex
-# catalog-date 2009-11-10 09:15:37 +0100
-# catalog-license pd
-# catalog-version 2.0
 Name:		texlive-placeins-plain
-Version:	2.0
-Release:	11
+Version:	15878
+Release:	1
 Summary:	Insertions that keep their place
 Group:		Publishing
 URL:		http://www.ctan.org/tex-archive/macros/plain/contrib/misc/placeins.tex
 License:	PD
-Source0:	http://mirrors.ctan.org/systems/texlive/tlnet/archive/placeins-plain.tar.xz
+Source0:	http://mirrors.ctan.org/systems/texlive/tlnet/archive/placeins-plain.r%{version}.tar.xz
 BuildArch:	noarch
 BuildRequires:	texlive-tlpkg
 Requires(pre):	texlive-tlpkg
@@ -27,12 +21,12 @@ normally begin a new page, just use \supereject to flush out
 insertions.).
 
 %post
-    %{_sbindir}/texlive.post
+%{_sbindir}/texlive.post
 
 %postun
-    if [ $1 -eq 0 ]; then
+if [ $1 -eq 0 ]; then
 	%{_sbindir}/texlive.post
-    fi
+fi
 
 #-----------------------------------------------------------------------
 %files
@@ -40,24 +34,10 @@ insertions.).
 
 #-----------------------------------------------------------------------
 %prep
-%setup -c -a0
+%autosetup -p1 -c
 
 %build
 
 %install
 mkdir -p %{buildroot}%{_texmfdistdir}
 cp -fpar tex %{buildroot}%{_texmfdistdir}
-
-
-%changelog
-* Wed Jan 04 2012 Paulo Andrade <pcpa@mandriva.com.br> 2.0-2
-+ Revision: 754961
-- Rebuild to reduce used resources
-
-* Sat Nov 05 2011 Paulo Andrade <pcpa@mandriva.com.br> 2.0-1
-+ Revision: 719269
-- texlive-placeins-plain
-- texlive-placeins-plain
-- texlive-placeins-plain
-- texlive-placeins-plain
-
